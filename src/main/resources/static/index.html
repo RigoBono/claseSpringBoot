@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
 <head>
     <meta charset="UTF-8">
     <title>holi</title>
 </head>
 <body>
 <p>Bienvenido</p>
-<form method="POST" action="/ctipo/saluda">
-    <input type="text" placeholder="Ingresa el ctipo" name="ctipopersona"/>
-    <input type="submit" value="Enviar">
 
+<input type="text" id="nombre" placeholder="nombre"/>
 
-</form>
+<input type="text" id="paterno" placeholder="paterno"/>
+<input type="text" id="materno" placeholder="materno"/>
 
+<button onclick="sendToServer()">Enviar</button>
 
-
+<script src="js/jquery.js"></script>
+<script src="js/patrana.js"></script>
 
 </body>
 </html>

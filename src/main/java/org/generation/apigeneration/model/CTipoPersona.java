@@ -12,13 +12,13 @@ public class CTipoPersona  implements Serializable{
     @Column(name="idCTipoPersona")
     private Integer idCTipoPersona;
 
-    @Column(name="CTipoPersona")
-    private String CTipoPersona;
+    @Column(name="cTipoPersona")
+    private String cTipoPersona;
 
 
     public CTipoPersona(Integer idCTipoPersona, String CTipoPersona) {
         this.idCTipoPersona = idCTipoPersona;
-        this.CTipoPersona = CTipoPersona;
+        this.cTipoPersona = CTipoPersona;
     }
 
     public CTipoPersona() {
@@ -33,10 +33,10 @@ public class CTipoPersona  implements Serializable{
     }
 
     public String getCTipoPersona() {
-        return CTipoPersona;
+        return cTipoPersona;
     }
 
     public void setCTipoPersona(String CTipoPersona) {
-        this.CTipoPersona = CTipoPersona;
+        this.cTipoPersona = CTipoPersona;
     }
 }

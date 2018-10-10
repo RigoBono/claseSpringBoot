@@ -4,10 +4,8 @@ package org.generation.apigeneration.rest;
 import org.generation.apigeneration.Repos.CTipoPersonaRepository;
 import org.generation.apigeneration.model.CTipoPersona;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +26,30 @@ public class CTipoPersonaREST {
     @GetMapping("/ctipopersona/crud/getall")
     public List<CTipoPersona> getall(){
         return cTipoPersonaRepository.findAll();
+    }
+
+    @GetMapping("/ctipopersona/{id}")
+    public CTipoPersona getById(@PathVariable("id") Integer id){
+        return cTipoPersonaRepository.findById(id).get();
+    }
+
+    @GetMapping("/ctipopersona/name/{nombre}")
+    public CTipoPersona getByName(@PathVariable("nombre") String nombre){
+        return cTipoPersonaRepository.findBycTipoPersona(nombre);
+    }
+
+
+    @PostMapping("/ctipopersona/modificar.gen")
+    public CTipoPersona modificar(
+            @Param("id") Integer id,
+            @Param("cTipo") String cTipo){
+        CTipoPersona cTipoPersona=cTipoPersonaRepository.findById(id).get();
+        if(cTipoPersona!=null){
+            cTipoPersona.setCTipoPersona(cTipo);
+            cTipoPersonaRepository.save(cTipoPersona);
+            return cTipoPersona;
+        }
+        return null;
     }
 
 
