@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>
+        <li th:each="tipo : ${ctipos}">
+            <p th:text="${tipo.getCTipoPersona()}"></p>
+        </li>
+
+    </ul>
+
+
+</body>
+</html>
